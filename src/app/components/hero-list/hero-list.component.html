@@ -1,0 +1,9 @@
+<button appCustom class="item">Reload</button>
+
+<ul>
+    <li *ngFor="let item of items"  appCustom>
+      <app-hero-item [item]="item"  (selectedItem)="onSelectedItem($event)"></app-hero-item>
+    </li>
+  </ul>
+  
+

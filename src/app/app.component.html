@@ -1,0 +1,19 @@
+<app-hero-page></app-hero-page>
+
+<p>
+  The condition is currently
+  <span [ngClass]="{'a': !condition, 'b': condition, 'unless': true}">{{ condition }}</span>
+  <button (click)="condition = !condition" [ngClass]="{'a': !condition, 'b': condition}">
+    Toggle condition to {{ condition ? 'false' : 'true' }}
+  </button>
+</p>
+
+<!-- AppComponent template -->
+<p *appUnless="condition" class="unless a">
+    (A) This paragraph is displayed because the condition is false.
+  </p>
+  
+  <p *appUnless="!condition" class="unless b">
+    (B) This paragraph is displayed because appUnless is set to false.
+  </p>
+  
